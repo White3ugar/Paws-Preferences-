@@ -4,6 +4,8 @@ const summary = document.getElementById('summary');
 const restartBtn = document.getElementById('restart');
 const leftIndicator = document.getElementById('left-indicator');
 const rightIndicator = document.getElementById('right-indicator');
+const likeSound = document.getElementById('like-sound');
+const dislikeSound = document.getElementById('dislike-sound');
 
 let catImages = [];
 let likedCats = [];
@@ -97,29 +99,35 @@ function createCard(url) {
 }
 
 function handleSwipeEnd(card, offsetX) {
-  if (offsetX < -100) {  // Left swipe to like
-    likeCard(card);      
-  } else if (offsetX > 100) {  // Right swipe to dislike
-    dislikeCard(card);  
-  } else {
-    card.style.transform = '';
-  }
+    if (offsetX < -100) {  // Left swipe to like
+        likeCard(card);      
+    } else if (offsetX > 100) {  // Right swipe to dislike
+        dislikeCard(card);  
+    } else {
+        card.style.transform = '';
+    }
 }
 
 function likeCard(card) {
-  const url = card.style.backgroundImage.slice(5, -2);
-  likedCats.push(url);
-  card.style.transform = 'translateX(-100vw)';
-  card.style.opacity = 0;
-  removeCard(card);
-  showSparkle('left');
+    likeSound.currentTime = 0;  // rewind to start
+    likeSound.play();
+
+    const url = card.style.backgroundImage.slice(5, -2);
+    likedCats.push(url);
+    card.style.transform = 'translateX(-100vw)';
+    card.style.opacity = 0;
+    removeCard(card);
+    showSparkle('left');
 }
 
 function dislikeCard(card) {
-  card.style.transform = 'translateX(100vw)';
-  card.style.opacity = 0;
-  removeCard(card);
-  showSparkle('right');
+    dislikeSound.currentTime = 0;  // rewind to start
+    dislikeSound.play();
+    
+    card.style.transform = 'translateX(100vw)';
+    card.style.opacity = 0;
+    removeCard(card);
+    showSparkle('right');
 }
 
 function removeCard(card) {
