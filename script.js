@@ -1,4 +1,4 @@
-const NUM_CATS = 5;
+const NUM_CATS = 10;
 const cardContainer = document.getElementById('card-container');
 const summary = document.getElementById('summary');
 const restartBtn = document.getElementById('restart');
@@ -147,6 +147,8 @@ function showSparkle(side) {
 }
 
 function showSummary() {
+    clearTimeout(hintTimeout);  // Stop hint timer
+
     summary.style.display = 'block';
     restartBtn.style.display = 'inline-block';
 
@@ -160,13 +162,37 @@ function showSummary() {
     // Show first liked cat in card position
     if (likedCats.length > 0) {
         displayCatInCard(likedCats[0]);
+
+        // Remove any hint animations from this summary card
+        const card = document.querySelector('.card');
+        if (card) {
+            card.classList.remove('show-hints');
+            const likeHint = card.querySelector('.like-hint');
+            const dislikeHint = card.querySelector('.dislike-hint');
+            if (likeHint && dislikeHint) {
+                likeHint.style.opacity = 0;
+                dislikeHint.style.opacity = 0;
+            }
+        }
     }
 
     // Make summary images clickable
     document.querySelectorAll('.liked-img').forEach(img => {
         img.addEventListener('click', () => {
-        const index = img.getAttribute('data-index');
-        displayCatInCard(likedCats[index]);
+            const index = img.getAttribute('data-index');
+            displayCatInCard(likedCats[index]);
+
+            // Also clear hints for this new card shown on click
+            const card = document.querySelector('.card');
+            if (card) {
+                card.classList.remove('show-hints');
+                const likeHint = card.querySelector('.like-hint');
+                const dislikeHint = card.querySelector('.dislike-hint');
+                if (likeHint && dislikeHint) {
+                    likeHint.style.opacity = 0;
+                    dislikeHint.style.opacity = 0;
+                }
+            }
         });
     });
 }
