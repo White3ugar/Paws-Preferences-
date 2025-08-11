@@ -34,8 +34,7 @@ main {
   position: relative;
   width: 60%;
   max-width: 400px;
-  margin: 20px auto;
-  height: 500px;
+  aspect-ratio: 3 / 4;
 }
 
 .card {
