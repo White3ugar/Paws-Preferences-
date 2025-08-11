@@ -6,10 +6,22 @@ const leftIndicator = document.getElementById('left-indicator');
 const rightIndicator = document.getElementById('right-indicator');
 const likeSound = document.getElementById('like-sound');
 const dislikeSound = document.getElementById('dislike-sound');
+const bgm = document.getElementById('bgm');
+bgm.volume = 0.2;
 
 let catImages = [];
 let likedCats = [];
 let hintTimeout;
+
+// Play background music on page load, if cannot autoplay, wait for user interaction
+bgm.play().catch(() => {
+  // Autoplay was blocked, play on first user interaction
+  function playOnInteraction() {
+    bgm.play();
+    document.removeEventListener('click', playOnInteraction);
+  }
+  document.addEventListener('click', playOnInteraction);
+});
 
 // Create a card element with swipe functionality
 // Each card will display a cat image and allow swiping left or right
@@ -110,6 +122,7 @@ function handleSwipeEnd(card, offsetX) {
 
 function likeCard(card) {
     likeSound.currentTime = 0;  // rewind to start
+    likeSound.volume = 0.5;
     likeSound.play();
 
     const url = card.style.backgroundImage.slice(5, -2);
@@ -123,7 +136,7 @@ function likeCard(card) {
 function dislikeCard(card) {
     dislikeSound.currentTime = 0;  // rewind to start
     dislikeSound.play();
-    
+
     card.style.transform = 'translateX(100vw)';
     card.style.opacity = 0;
     removeCard(card);
