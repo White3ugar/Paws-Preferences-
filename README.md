@@ -1,12 +1,12 @@
 # Paws & Preferences: Find Your Favourite Kitty 🐾
 
-A simple, fun, and mobile-friendly web app that helps users discover their favorite cats or kittens by swiping through a stack of adorable cat images.
+A simple, fun, and mobile-friendly web app that helps users discover their favourite cats or kittens by swiping through a stack of adorable cat images.
 
 ---
 
 ## Features
 
-- Swipe right to **like** a cat and swipe left to **dislike**, inspired by popular dating apps.
+- Swipe left to **like** a cat and swipe right to **dislike**
 - Displays a summary at the end showing how many cats were liked and presents the liked cats visually.
 - Fetches real cat images dynamically from [Cataas](https://cataas.com/), the Cat As A Service API.
 - Smooth, intuitive swipe gestures designed specifically for mobile devices.
