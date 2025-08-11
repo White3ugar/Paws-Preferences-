@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fffaf0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #ffcccb;
+  padding: 10px;
+  margin: 0;
+}
+
+#loading {
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  margin: 1em 0;
+}
+
+#card-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  height: 500px;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+#summary {
+  display: none;
+}
+
+.liked-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+#restart {
+  display: none;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #ffcccb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.swipe-indicator {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  opacity: 0.2;
+  pointer-events: none; /* Prevent blocking swipes */
+  transition: opacity 0.2s ease;
+}
+
+#left-indicator {
+  left: 10px;
+  color: red;
+}
+
+#right-indicator {
+  right: 10px;
+  color: #444;
+}
+
+.swipe-indicator.active {
+  opacity: 1;
+}
