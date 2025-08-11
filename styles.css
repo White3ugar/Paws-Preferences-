@@ -21,7 +21,7 @@ h1 {
 
 #card-container {
   position: relative;
-  width: 100%;
+  width: 60%;
   max-width: 400px;
   margin: 20px auto;
   height: 500px;
@@ -76,12 +76,12 @@ h1 {
 }
 
 #left-indicator {
-  left: 10px;
+  left: 0px;
   color: red;
 }
 
 #right-indicator {
-  right: 10px;
+  right: 0px;
   color: #444;
 }
 
