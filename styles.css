@@ -1,23 +1,26 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   background-color: #fffaf0;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column; /* stack header & content */
+  height: 100vh; /* full screen height */
 }
 
 h1 {
   background-color: #ffcccb;
   padding: 10px;
   margin: 0;
+  text-align: center;
 }
 
-.main-content {
-  height: calc(100vh - 60px); /* full height minus header */
+main {
+  flex: 1; /* take all remaining height after header */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center; /* horizontal centering */
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
 }
 
 #loading {

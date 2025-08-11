@@ -211,7 +211,7 @@ async function loadCats() {
   });
 }
 
-restartBtn.addEventListener('click', loadCats);
+restartBtn.addEventListener('click', () => loadCats());
 
 // Start
 loadCats();
