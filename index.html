@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Paws & Preferences 🐱</h1>
+    <h1>🐾 Paws & Preferences 🐾</h1>
     
     <main>
         <div id="loading">Fetching adorable cats...</div>
-        <div id="card-container"></div>
+        <div id="card-container">
+        <div class="card">
+            <div class="swipe-hint like-hint">❤️</div>
+            <div class="swipe-hint dislike-hint">❌</div>
+        </div>
+        </div>
         <div id="summary"></div>
         <button id="restart">Restart</button>
     </main>
-
-    <div id="left-indicator" class="swipe-indicator">❤️</div>
-    <div id="right-indicator" class="swipe-indicator">💔</div>
+    
+    <div id="sparkle-left" class="sparkle">⭐️</div>
+    <div id="sparkle-right" class="sparkle">⭐️</div>
 
     <script src="script.js"></script>
 </body>
