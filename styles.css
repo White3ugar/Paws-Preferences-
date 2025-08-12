@@ -1,14 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     background: repeating-linear-gradient(
-        #f0a7a7 0 80px,         /* stripe 1: 40px */
-        #f5d19b 80px 160px,      /* stripe 2: 40px */
-        #f5f09c 160px 240px,     /* stripe 3: 40px */
-        #9cf49b 240px 320px,    /* stripe 4: 40px */
-        #b6d9fc 320px 400px,    /* stripe 5: 40px */
-        #f691e9 400px 480px     /* stripe 6: 40px */
+        #f0a7a7 0 80px, 
+        #f5d19b 80px 160px,
+        #f5f09c 160px 240px, 
+        #9cf49b 240px 320px, 
+        #b6d9fc 320px 400px,
+        #f691e9 400px 480px 
     );
-    background-size: 200% 200%; /* Match the total stripe pattern size */
+    background-size: 200% 200%;
     animation: moveStripes 60s linear infinite;
     margin: 0;
     padding: 0;
@@ -22,7 +22,7 @@ body {
         background-position: 0 0;
     }
     to {
-        background-position: 200% 200%; /* Move exactly one pattern length */
+        background-position: 200% 200%;
     }
 }
 
@@ -43,8 +43,8 @@ main {
     min-height: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* keep horizontal centering */
-    margin-top: 50px;      /* move a bit below the title */
+    align-items: center;
+    margin-top: 50px;
 }
 
 #loading {
